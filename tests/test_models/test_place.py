@@ -75,7 +75,8 @@ class TestPlaceClass(unittest.TestCase):
         dict_representation = place2.to_dict()
 
         self.assertIsInstance(dict_representation, dict)
-        self.assertEqual(dict_representation['__class__'], type(place2).__name__)
+        self.assertEqual(
+            dict_representation['__class__'], type(place2).__name__)
         self.assertIn('created_at', dict_representation)
         self.assertIn('updated_at', dict_representation)
         self.assertNotEqual(place1, place2)
@@ -83,4 +84,3 @@ class TestPlaceClass(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

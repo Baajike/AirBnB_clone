@@ -7,6 +7,7 @@ from datetime import datetime
 from models.amenity import Amenity
 from models.engine.file_storage import FileStorage
 
+
 class TestAmenityClass(unittest.TestCase):
     """Test cases for the `Amenity` class."""
 
@@ -67,4 +68,3 @@ class TestAmenityClass(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

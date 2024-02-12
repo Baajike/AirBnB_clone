@@ -21,4 +21,3 @@ class Amenity(BaseModel):
 
     # Additional attributes specific to the Amenity class
     name = ""
-

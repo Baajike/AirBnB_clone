@@ -21,4 +21,3 @@ class State(BaseModel):
 
     # Additional attributes specific to the State class
     name = ""
-

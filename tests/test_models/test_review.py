@@ -63,7 +63,8 @@ class TestReviewClass(unittest.TestCase):
         dict_representation = review2.to_dict()
 
         self.assertIsInstance(dict_representation, dict)
-        self.assertEqual(dict_representation['__class__'], type(review2).__name__)
+        self.assertEqual(
+            dict_representation['__class__'], type(review2).__name__)
         self.assertIn('created_at', dict_representation)
         self.assertIn('updated_at', dict_representation)
         self.assertNotEqual(review1, review2)
@@ -71,4 +72,3 @@ class TestReviewClass(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

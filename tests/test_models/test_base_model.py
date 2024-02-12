@@ -30,7 +30,8 @@ class TestBaseModel(unittest.TestCase):
         """Test passing cases for `BaseModel` initialization."""
         base_model1 = BaseModel()
         base_model2_uuid = str(uuid.uuid4())
-        base_model2 = BaseModel(id=base_model2_uuid, name="The Weeknd", album="Trilogy")
+        base_model2 = BaseModel(id=base_model2_uuid,
+                                name="The Weeknd", album="Trilogy")
         self.assertIsInstance(base_model1.id, str)
         self.assertIsInstance(base_model2.id, str)
         self.assertEqual(base_model2_uuid, base_model2.id)
@@ -38,19 +39,22 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(base_model2.name, "The Weeknd")
         self.assertIsInstance(base_model1.created_at, datetime)
         self.assertIsInstance(base_model1.updated_at, datetime)
-        self.assertEqual(str(type(base_model1)), "<class 'models.base_model.BaseModel'>")
+        self.assertEqual(str(type(base_model1)),
+                         "<class 'models.base_model.BaseModel'>")
 
     def test_to_dict_method(self):
         """Test method for to_dict."""
         base_model1 = BaseModel()
         base_model2_uuid = str(uuid.uuid4())
-        base_model2 = BaseModel(id=base_model2_uuid, name="The Weeknd", album="Trilogy")
+        base_model2 = BaseModel(id=base_model2_uuid,
+                                name="The Weeknd", album="Trilogy")
         base_model1_dict = base_model1.to_dict()
         self.assertIsInstance(base_model1_dict, dict)
         self.assertIn('id', base_model1_dict.keys())
         self.assertIn('created_at', base_model1_dict.keys())
         self.assertIn('updated_at', base_model1_dict.keys())
-        self.assertEqual(base_model1_dict['__class__'], type(base_model1).__name__)
+        self.assertEqual(
+            base_model1_dict['__class__'], type(base_model1).__name__)
         with self.assertRaises(KeyError):
             base_model2.to_dict()
 
@@ -96,4 +100,3 @@ class TestBaseModel(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

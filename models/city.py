@@ -22,4 +22,3 @@ class City(BaseModel):
     # Additional attributes specific to the City class
     name = ""
     state_id = ""
-

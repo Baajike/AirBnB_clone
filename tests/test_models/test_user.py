@@ -62,7 +62,8 @@ class TestStateClass(unittest.TestCase):
         dict_representation = user2.to_dict()
 
         self.assertIsInstance(dict_representation, dict)
-        self.assertEqual(dict_representation['__class__'], type(user2).__name__)
+        self.assertEqual(
+            dict_representation['__class__'], type(user2).__name__)
         self.assertIn('created_at', dict_representation)
         self.assertIn('updated_at', dict_representation)
         self.assertNotEqual(user1, user2)
@@ -70,4 +71,3 @@ class TestStateClass(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

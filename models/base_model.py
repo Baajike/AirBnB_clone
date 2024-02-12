@@ -63,4 +63,3 @@ class BaseModel:
         obj_dict['updated_at'] = obj_dict['updated_at'].isoformat()
 
         return obj_dict
-

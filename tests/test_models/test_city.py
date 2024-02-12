@@ -6,6 +6,7 @@ from models import storage
 from models.city import City
 from datetime import datetime
 
+
 class TestCityClass(unittest.TestCase):
     """Test cases for the `City` class."""
 
@@ -57,4 +58,3 @@ class TestCityClass(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
